@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Feedback</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<iframe src="http://localhost:8501" style="height: 600px; width: 100%;"></iframe>
+<div class="main">
+  <b>WARNING</b>
+  <br>
+  <b style="color: red;">If the app is not showing, please type 'streamlit run Main_page.py' into the cmd within the current directory</b>
+  <br>
+  <b style="color: red;">Also check on line 11 if the url is correct or not</b>
+  <section style="text-align: left; margin: 20px">
+    <h2>Form section: User Data / Feedback</h2>
+    <form id="form" action="/">
+      <div>
+        <label for="first-name">First name</label>
+        <input type="text" name="first-name" id="first-name">
+        <div class="error"></div>
+      </div>
+      <div>
+        <label for="last-name">Last name</label>
+        <input type="text" name="last-name" id="last-name">
+        <div class="error"></div>
+      </div>
+      <div>
+        <p>Is your country warming quicker than average (Linear Regression)</p>
+        <label>
+          <input type="radio" name="response" value="true" id="response-true"> Yes
+        </label>
+        <label>
+          <input type="radio" name="response" value="false" id="response-false"> No
+        </label>
+        <div class="error"></div>
+      </div>
+      <br>
+      <div>
+        <label for="rating">How would you rate this app? 5 = Very Satisfactory, 1 = Horrible:</label>
+        <input type="number" id="rating" name="rating" min="1" max="5">
+        <div class="error"></div>
+      </div>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <h2>Entries</h2>
+    <div id="results"></div>
+  </section>
+</div>
+
+<script src="{{ url_for('static', filename='Script.js') }}" defer></script>
+</body>
+</html>

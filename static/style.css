@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightblue; 
+    color: rgb(0, 0, 0);
+    color:black;
+}
+
+.main {
+    margin: 10vh;
+    align-items: center;
+}
+
+.sec1 {
+    font-size: 3vh;
+    margin: 5%;
+}
+
+h1 {
+    font-size: 7vh;
+}

@@ -45,17 +45,20 @@ def function3(listOfCountry, yearRangeFrom, yearRangeTo):
     return listOfYears, diffList
 
 if st.button("Analyse Data"):
-    listOfYears, diffList = function3(listOfCountry, yearRange[0], yearRange[1])
+    if len(listOfCountry) < 2:
+        st.write('You need at least 2 countries :/')
+    else:
+        listOfYears, diffList = function3(listOfCountry, yearRange[0], yearRange[1])
 
-    newListOfCountry = []   #Combining listOfCountry and diffList together e.g. ['Ireland', 'United Kingdom'] and [0.025, -0.028] becomes ['Ireland 0.025', 'United Kingdom -0.028']
-    counter = 0
-    for cou in listOfCountry:
-        newListOfCountry.append(f'{cou} {diffList[counter]}')
-        counter += 1
+        newListOfCountry = []   #Combining listOfCountry and diffList together e.g. ['Ireland', 'United Kingdom'] and [0.025, -0.028] becomes ['Ireland 0.025', 'United Kingdom -0.028']
+        counter = 0
+        for cou in listOfCountry:
+            newListOfCountry.append(f'{cou} {diffList[counter]}')
+            counter += 1
 
-    explodeTup = tuple(explodeList)       #For explode values, Matplotlib only takes set data type
-    plt.pie(countryTempsRange, labels=newListOfCountry, autopct='%1.1f%%', explode=explodeTup, shadow=True, startangle=90, labeldistance=.9, pctdistance=0.5)
-    plt.title(f'Difference of Yearly Mean Temperature {yearRange[0]} to {yearRange[1]}')
-    plt.text(1.2, 0, 'Exploded means negative values', fontsize=8, verticalalignment='center', bbox=dict(facecolor='lightgray', alpha=0.5))
-    plt.tight_layout()
-    st.pyplot(plt)
+        explodeTup = tuple(explodeList)       #For explode values, Matplotlib only takes set data type
+        plt.pie(countryTempsRange, labels=newListOfCountry, autopct='%1.1f%%', explode=explodeTup, shadow=True, startangle=90, labeldistance=.9, pctdistance=0.5)
+        plt.title(f'Difference of Yearly Mean Temperature {yearRange[0]} to {yearRange[1]}')
+        plt.text(1.2, 0, 'Exploded means negative values', fontsize=8, verticalalignment='center', bbox=dict(facecolor='lightgray', alpha=0.5))
+        plt.tight_layout()
+        st.pyplot(plt)

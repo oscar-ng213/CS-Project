@@ -7,15 +7,63 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
-<iframe src="http://localhost:8501" style="height: 600px; width: 100%;"></iframe>
+<div class="main">
+  <section style="text-align: left; margin: 20px;">
+    <h2>Information on dataset</h2>
+    <p>Welcome to my global warming interactive information system.</p>
+    <p>The information is sourced form a dataset on Kaggle.com (click <a href="https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data?select=GlobalLandTemperaturesByCountry.csv">here</a>)</p>
+    <p>This dataset goes back all the way to 1743! However, we are only taking data from year 2000 and onwards</p>
+    <br>
+    <h2>Here is what the authors of the dataset have to say:</h2>
+    <section style="width:80%">
+      <p>Some say climate change is the biggest threat of our age while others say it’s a myth based on dodgy science. We are turning some of the data over to you so you can form your own view.</p>
+      <br>
+      <p>Even more than with other data sets that Kaggle has featured, there’s a huge amount of data cleaning and preparation that goes into putting together a long-time study of climate trends. Early data was collected by technicians using mercury thermometers, where any variation in the visit time impacted measurements. In the 1940s, the construction of airports caused many weather stations to be moved. In the 1980s, there was a move to electronic thermometers that are said to have a cooling bias.</p>
+      <br>
+      <p>We have repackaged the data from a newer compilation put together by the Berkeley Earth, which is affiliated with Lawrence Berkeley National Laboratory. The Berkeley Earth Surface Temperature Study combines 1.6 billion temperature reports from 16 pre-existing archives. It is nicely packaged and allows for slicing into interesting subsets (for example by country). They publish the source data and the code for the transformations they applied. They also use methods that allow weather observations from shorter time series to be included, meaning fewer observations need to be thrown away.</p>
+      <br>
+      <p>Given this complexity, there are a range of organizations that collate climate trends data. The three most cited land and ocean temperature data sets are NOAA’s MLOST, NASA’s GISTEMP and the UK’s HadCrut.</p>
+      <br>
+      <p>We have repackaged the data from a newer compilation put together by the Berkeley Earth, which is affiliated with Lawrence Berkeley National Laboratory. The Berkeley Earth Surface Temperature Study combines 1.6 billion temperature reports from 16 pre-existing archives. It is nicely packaged and allows for slicing into interesting subsets (for example by country). They publish the source data and the code for the transformations they applied. They also use methods that allow weather observations from shorter time series to be included, meaning fewer observations need to be thrown away.</p>
+    </section>
+    <br>
+    <h2>These are some intereting insights I found using this dataset</h2>
+    <br>
+    <ul>
+      <li>
+        <h3>Insight 1</h3>
+        <p>Ireland’s annual mean temperature is relatively stable compared to other European countries of similar latitude</p>
+        <img src="{{ url_for('static', filename='insight1.png') }}" alt="line graph">
+      </li>
+      <br>
+      <li>
+        <h3>Insight 2</h3>
+        <p>In Northern Hemisphere such as Ireland, it gets cold at the start and end of year.</p>
+        <p> While in Southern Hemisphere such as Australia, it gets cold in the middle of the year!</p>
+        <img src="{{ url_for('static', filename='insight2.png') }}" alt="bar graph">
+        <img src="{{ url_for('static', filename='insight2.1.png') }}" alt="bar graph 1">
+      </li>
+      <br>
+      <li>
+        <h3>Insight 3</h3>
+        <p>The data suggests that North America is the continent with the greatest rate of global warming.</p>
+        <img src="{{ url_for('static', filename='insight3.png') }}" alt="pie chart">
+      </li>
+    </ul>
+    <br><br><br>
+    <p>Use the streamlit iframe below to begin analysing data for yourself</p>
+  </section>
+</div>
+<section style="margin: 20px;">
+  <iframe src="http://localhost:8501" style="height: 750px; width: 100%;"></iframe>
+</section>
 <div class="main">
   <b>WARNING</b>
   <br>
   <b style="color: red;">If the app is not showing, please type 'streamlit run Main_page.py' into the cmd within the current directory</b>
   <br>
-  <b style="color: red;">Also check on line 11 if the url is correct or not</b>
-  <section style="text-align: left; margin: 20px">
+  <b style="color: red;">Also check on line 41 if the url is correct or not</b>
+  <section style="text-align: left; margin: 20px;">
     <h2>Form section: User Data / Feedback</h2>
     <form id="form" action="/">
       <div>

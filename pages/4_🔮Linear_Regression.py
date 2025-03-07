@@ -55,9 +55,9 @@ def function4(countryInput):
     st.write(f'Formula: y = {m}x + {b}')
     
     if m > 0.02:
-        st.write(f'Your country {countryInput} is HAS reached the critical threshold')
+        st.write(f'Your country {countryInput} IS warming quicker than average')
     else:
-        st.write(f'Your country {countryInput} is HAS NOT reached the critical threshold')
+        st.write(f'Your country {countryInput} IS NOT warming quicker than average')
     st.write(m)
     
     listOfYears = list(range(2000,2051))

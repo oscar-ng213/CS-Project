@@ -1,6 +1,4 @@
-#Function 1: 
-#--------------------------------------------------------------------------------------
-#A full dictionary of temperature sorted by Country {'Ireland': [12,13,14], 'United Kingdom': [10,12,13].....}
+#Function 1 (Line graph): 
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -21,6 +19,7 @@ st.header("Select countr(ies)")
 listOfCountry = st.multiselect("Select Countries", validCountryList)
 yearRange = st.slider("Select Year Range", 2000, 2013, (2000, 2010))
 
+#Creates a full dictionary of temperature sorted by Country {'Ireland': [12,13,14], 'United Kingdom': [10,12,13].....}
 def function1(listOfCountry, yearRangeFrom, yearRangeTo):
     countryMean = {}
     listOfYears = list(range(yearRangeFrom, yearRangeTo + 1))

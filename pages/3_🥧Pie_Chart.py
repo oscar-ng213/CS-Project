@@ -1,6 +1,4 @@
-#Function 3 Fluctuations in mean temperature
-#---------------------------------------------------------------------------------------
-#Shows the range between the min and max mean temperature of countr(ies) in a year range
+#Function 3 (Pie chart):
 
 import matplotlib.pyplot as plt
 import pandas as pd

@@ -1,5 +1,5 @@
-#Function 4 Linear Regression ( Recommendation AR3 )
-#---------------------------------------------------------------------------------------
+#Function 4 (Linear Regression: Recommendation AR3 ):
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -72,10 +72,10 @@ if st.button('Analyse Data'):
     plt.title(f'Prediction Model of {countryInput}')
     plt.xlabel('Year')
     plt.ylabel('Mean Annual Temperature (°C)')
-    plt.grid(True)  # Add grid for better readability
+    plt.grid(True)  
     plt.xticks(range(2000,2051,5))  
-    minTemp = min(predictionMean) -1  # Find lowest temperature and subtract 1
-    maxTemp = max(predictionMean) +2 # Find highest temperature and add 2
+    minTemp = min(predictionMean) -1  
+    maxTemp = max(predictionMean) +2 
     plt.yticks(np.linspace(minTemp, maxTemp, 10)) 
     st.pyplot(plt)
 

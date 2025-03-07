@@ -1,4 +1,5 @@
-import matplotlib.pyplot as plt
+#Function 2 (Bar chart): 
+
 import pandas as pd
 import streamlit as st
 
@@ -19,14 +20,12 @@ def function2(country, year):
     countryData = dataIn[dataIn['Country'] == country]
     yearData = countryData[countryData['dt'].dt.year == year]
     monthAver = yearData.groupby(yearData['dt'].dt.month)['AverageTemperature'].mean()
-    monthMap = {1:"Jan", 2:"Feb", 3:"Mar", 4:"Apr", 5:"May", 6:"Jun",
-                 7:"Jul", 8:"Aug", 9:"Sep", 10:"Oct", 11:"Nov", 12:"Dec"}
+    monthMap = {1:"Jan", 2:"Feb", 3:"Mar", 4:"Apr", 5:"May", 6:"Jun", 7:"Jul", 8:"Aug", 9:"Sep", 10:"Oct", 11:"Nov", 12:"Dec"} # Mapping numeric months to their names
     monthAver.index = monthAver.index.map(monthMap)
-    order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] 
     monthAver = monthAver.reindex(order).dropna()
-    monthAver.index = pd.CategoricalIndex(monthAver.index, categories=order, ordered=True)
-    monthAver = monthAver.sort_index()
+    monthAver.index = pd.CategoricalIndex(monthAver.index, categories=order, ordered=True)  # Ensure the is categorised properly
+    monthAver = monthAver.sort_index() # Sort the index to maintain proper month order
     return monthAver
 
 if st.button("Analyse Data"):

@@ -1,9 +1,10 @@
 "# CS-Project" 
-Frontend: HTML, CSS, JavaScript
-Backend: Flask (Python), JSON for data storage
-Data Processing: Pandas, NumPy
-Visualization: Matplotlib, Streamlit
-Version Control: Git, GitHub
+## Process
+1. Frontend: HTML, CSS, JavaScript
+2. Backend: Flask (Python), JSON for data storage
+3. Data Processing: Pandas, NumPy
+4. Visualization: Matplotlib, Streamlit
+5. Version Control: Git, GitHub
 
 ## Installation
 1. Clone the repository.

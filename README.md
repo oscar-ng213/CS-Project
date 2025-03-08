@@ -16,17 +16,29 @@ This is my app as part of my Leaving Certificate 2025 Computer Science project
 - `/static/` → CSS, images, JS
 - `app.py` → Main Flask application
 
-/project-folder  
-│── /templates/       # All HTML files  
-│── /static/          # CSS, JS, images  
-│── /static/css/      # Stylesheets  
-│── /static/js/       # JavaScript files  
-│── /static/images/   # Images  
-│── app.py            # Main Flask app  
-│── requirements.txt  # Dependencies  
-│── userData.json     # Stores user entries  
-│── README.md         # Project documentation  
-│── .gitignore        # Prevents tracking unnecessary files  
+/Artefact
+│── /pages/                         #Holds my streamlit pages
+│── /pages/1_📈Line_Graph.py/       
+│── /pages/2_📊Bar_Chart.py/    
+│── /pages/3_🥧Pie_Chart.py/     
+│── /pages/4_🔮Linear_Regression/  
+│── /static/                        #Holds images, css and javascript
+│── /static/insight1.png/  
+│── /static/insight2.1.png/
+│── /static/insight2.png/    
+│── /static/insight3.png/
+│── /static/Script.js/
+│── /static/style.css/  
+│── /templates/                     #Holds my main HTML page
+│── /templates/index.html/  
+│── app.py
+│── cleanedDF.csv
+│── dirtyDF.csv
+│── Main_page.py
+│── README.md                       #You're here
+│── requirements.txt
+│── theCleaningPart.py
+│── usrData.json                    #Holds user's data
 
 
 Flask runs on http://127.0.0.1:5000/

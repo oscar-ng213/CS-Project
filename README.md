@@ -1,4 +1,4 @@
-"# CS-Project" 
+This is my app as part of my Leaving Certificate 2025 Computer Science project
 ## Process
 1. Frontend: HTML, CSS, JavaScript
 2. Backend: Flask (Python), JSON for data storage

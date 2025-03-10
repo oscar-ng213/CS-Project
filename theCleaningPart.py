@@ -7,7 +7,7 @@ dataIn = pd.read_csv(file_path)
 print(dataIn.head(10))
 
 #Removing Celsius Symbol
-dataIn['AverageTemperature'] = dataIn['AverageTemperature'].replace({'C':''}, regex=True)
+dataIn['AverageTemperature'] = dataIn['AverageTemperature'].replace({'°C':''}, regex=True)
 print('\n\n\nAFTER REMOVING C\n', dataIn.head(10))
 
 #Changing relevant columns to numeric value
@@ -35,6 +35,8 @@ dataIn = dataIn.loc[(dataIn['dt'] >= '2000-01-01')]
 print('\n\n\nFINAL RESULT\n',dataIn.head(10))
 
 dataIn.to_csv('cleanedDF.csv', index=False)
+
+
 
 
 

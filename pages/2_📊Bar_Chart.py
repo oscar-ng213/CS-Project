@@ -16,17 +16,14 @@ st.header("Select a country")
 countryInput = st.selectbox("Select a country", validCountryList)
 year = st.slider("Select a year", 2000, 2013)
 
-def function2(country, year):
-    countryData = dataIn[dataIn['Country'] == country]
-    yearData = countryData[countryData['dt'].dt.year == year]
-    monthAver = yearData.groupby(yearData['dt'].dt.month)['AverageTemperature'].mean()
-    monthMap = {1:"Jan", 2:"Feb", 3:"Mar", 4:"Apr", 5:"May", 6:"Jun", 7:"Jul", 8:"Aug", 9:"Sep", 10:"Oct", 11:"Nov", 12:"Dec"} # Mapping numeric months to their names
-    monthAver.index = monthAver.index.map(monthMap)
-    order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] 
-    monthAver = monthAver.reindex(order).dropna()
-    monthAver.index = pd.CategoricalIndex(monthAver.index, categories=order, ordered=True)  # Ensure the is categorised properly
-    monthAver = monthAver.sort_index() # Sort the index to maintain proper month order
-    return monthAver
+def function2(countryInput, year):                                                
+    countryData = dataIn[(dataIn['Country'] == countryInput) & (dataIn['dt'].dt.year == year)]
+    monthlyData = countryData.groupby(countryData['dt'].dt.strftime('%b'))['AverageTemperature'].mean()  #Calculae the mean temperature              
+    monthList = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
+    monthlyData = monthlyData.reindex(monthList).dropna() #Reorder data based on monthList, drop months with no data
+    monthlyData.index = pd.CategoricalIndex(monthlyData.index, categories=monthList, ordered=True)
+    monthlyData = monthlyData.sort_index()
+    return monthlyData
 
 if st.button("Analyse Data"):
     monthlyData = function2(countryInput, year)

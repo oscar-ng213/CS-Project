@@ -23,8 +23,7 @@ yearRange = st.slider("Select Year Range", 2000, 2013, (2000, 2010))
 def function1(listOfCountry, yearRangeFrom, yearRangeTo):
     countryMean = {}
     listOfYears = list(range(yearRangeFrom, yearRangeTo + 1))
-    countryData = dataIn[(dataIn['Country'].isin(listOfCountry)) & 
-                         (dataIn['dt'].dt.year.between(yearRangeFrom, yearRangeTo))]
+    countryData = dataIn[(dataIn['Country'].isin(listOfCountry)) & (dataIn['dt'].dt.year.between(yearRangeFrom, yearRangeTo))]
     for country in listOfCountry:
         data = countryData[countryData['Country'] == country]
         yearData = data.groupby(data['dt'].dt.year)['AverageTemperature'].mean()
